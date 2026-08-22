@@ -66,7 +66,7 @@
     "float fbm(vec2 p) {",
     "  float v = 0.0;",
     "  float a = 0.5;",
-    "  for (int i = 0; i < 5; i++) {",
+    "  for (int i = 0; i < 4; i++) {",
     "    v += a * noise(p);",
     "    p = p * 2.02 + vec2(1.7, 9.2);",
     "    a *= 0.5;",
@@ -101,7 +101,7 @@
     "  );",
     "  vec2 warped = p + (q - 0.5) * (0.28 * u_warp) + (r - 0.5) * (0.16 * u_warp);",
     "  float v = 0.0;",
-    "  for (int i = 0; i < 8; i++) {",
+    "  for (int i = 0; i < 6; i++) {",
     "    float fi = float(i);",
     "    float id = fi * 1.618 + u_seed;",
     "    vec2 c = vec2(",
@@ -122,10 +122,14 @@
     "    vec2 md = warped - u_mouse;",
     "    v += u_hasMouse * 0.11 / (dot(md, md) + 0.018);",
     "  }",
-    "  v += 0.18 * (fbm(warped * 3.4 + t * 0.12) - 0.5);",
-    "  float ink = max(isoline(v, 5.6 * u_density, 0.1), isoline(v, 10.2 * u_density, 0.09) * 0.22);",
     "  float fill = smoothstep(0.95, 1.35, v) * (1.0 - smoothstep(3.1, 3.9, v));",
     "  float core = smoothstep(2.2, 2.8, v) * (1.0 - smoothstep(3.0, 3.55, v));",
+    "  float sea = 1.0 - smoothstep(0.04, 0.2, fill);",
+    "  float bg = fbm(warped * 2.0 + vec2(t * 0.04, -t * 0.03) + u_seed);",
+    "  float seaInk = isoline(bg, 4.8 * u_density, 0.095) * sea;",
+    "  float edgeInk = isoline(v, 5.6 * u_density, 0.1);",
+    "  edgeInk *= smoothstep(0.4, 0.65, v) * (1.0 - smoothstep(0.88, 0.98, v));",
+    "  float ink = max(seaInk, edgeInk);",
     "  return max(ink, max(fill * 0.28, core * 0.62));",
     "}",
 
@@ -227,14 +231,14 @@
     options = options || {};
     var reduced = !!options.reduced;
     var trackMouse = options.trackMouse !== false;
-    var pixelRatio = options.pixelRatio || 1.75;
+    var pixelRatio = options.pixelRatio || 1;
     var preset = normalizePreset(options.preset);
 
     var gl = canvas.getContext("webgl", {
       antialias: false,
       alpha: false,
       premultipliedAlpha: false,
-      preserveDrawingBuffer: true
+      preserveDrawingBuffer: false
     }) || canvas.getContext("experimental-webgl", {
       antialias: false,
       alpha: false
@@ -297,6 +301,7 @@
     var paused = false;
     var raf = 0;
     var start = performance.now();
+    var lastDraw = 0;
     var mouse = { x: 0, y: 0, on: 0 };
     var target = { x: 0, y: 0, on: 0 };
 
@@ -316,10 +321,9 @@
       var h = Math.max(1, canvas.clientHeight);
       var pw = Math.max(1, Math.floor(w * dpi));
       var ph = Math.max(1, Math.floor(h * dpi));
-      if (canvas.width !== pw || canvas.height !== ph) {
-        canvas.width = pw;
-        canvas.height = ph;
-      }
+      if (canvas.width === pw && canvas.height === ph) return;
+      canvas.width = pw;
+      canvas.height = ph;
       gl.viewport(0, 0, pw, ph);
       gl.uniform2f(uniforms.res, pw, ph);
     }
@@ -358,8 +362,13 @@
     }
 
     function draw(now) {
-      size();
-      applyPreset();
+      var active = target.on > 0.01 || mouse.on > 0.02;
+      var minGap = active ? 16 : 33;
+      if (now - lastDraw < minGap - 1) {
+        if (!reduced && !paused) raf = requestAnimationFrame(draw);
+        return;
+      }
+      lastDraw = now;
       mouse.on += (target.on - mouse.on) * 0.12;
       if (target.on) {
         mouse.x += (target.x - mouse.x) * 0.14;

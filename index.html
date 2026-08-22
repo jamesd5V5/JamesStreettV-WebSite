@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>V. Streett</title>
+    <title>James Streett V</title>
     <meta name="description" content="A small profile. Black, white, and the space between." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect fill='%230c0c0c' width='16' height='16'/><circle cx='8' cy='8' r='3' fill='none' stroke='%23f3efe6' stroke-width='1.2'/></svg>" />
@@ -18,8 +18,10 @@
     <div class="grain" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="wordmark" href="#top">V. Streett</a>
+      <a class="wordmark" href="#top">James Streett V</a>
+      <p class="site-header-title work-title-text" aria-hidden="true">Work & Project Timeline</p>
       <nav class="nav">
+        <a href="#top">Home</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a href="#work" data-open-work>Work</a>
@@ -30,15 +32,25 @@
       <canvas id="field" class="field" aria-hidden="true"></canvas>
       <div class="hero-copy">
         <p class="eyebrow">Profile</p>
-        <h1>V. Streett</h1>
+        <div class="hero-name-row">
+          <h1>
+            <span class="hero-name-line">James</span>
+            <span class="hero-name-line">Streett V</span>
+          </h1>
+        </div>
         <p class="lede">SWE @ Createbase
           || Audio/Software Engineer</p>
       </div>
+      <a href="#about" class="hero-scroll-hint" aria-label="Scroll down">
+        <svg class="hero-scroll-arrow" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
     </section>
 
-    <main>
-      <section class="about" id="about">
-        <p class="section-index">01</p>
+    <main class="main-layout">
+      <section class="about main-about">
+        <p class="section-index" id="about">01</p>
         <h2>About</h2>
         <p class="about-links">
           <a href="https://www.linkedin.com/in/james-st/" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -50,30 +62,42 @@
           <p>
             My name is James Streett V, and I'm passionate about all things Audio. As both a Software Engineer and Audio Engineer, I'm familair with everything from AWS, DSPs, and Ml. I'm also a musician of 15+ years, mainly piano and drums. UC San Diego Alum, with dual degrees with B.S in Machine Learning &amp; B.A. in Audio Engineering.
           </p>
-          <p>
-            Did I mention I'm also forklift certified? 😎
-          </p>
         </div>
       </section>
 
-      <section class="contact" id="contact">
-        <p class="section-index">02</p>
-        <h2>Contact</h2>
-        <ul class="links">
-          <li>
-            <a href="mailto:jamesd5V5@gmail.com">
-              <span>Email</span>
-              <span>jamesd5V5@gmail.com</span>
-            </a>
-          </li>
-          <li>
-            <a href="tel:+17472075028">
-              <span>Phone</span>
-              <span>747-207-5028</span>
-            </a>
-          </li>
-        </ul>
-      </section>
+      <div class="main-photo-wrap">
+        <img class="main-photo" src="pics/profilePic.png" alt="" width="224" height="280" />
+      </div>
+
+      <div class="about-footer-row">
+        <p class="about-funfact">Did I mention I'm also forklift certified? 😎</p>
+        <a href="#work" class="work-cta-btn work-title-text" data-open-work>Work & Project Timeline</a>
+      </div>
+
+      <section class="contact main-contact" id="contact">
+          <p class="section-index">02</p>
+          <h2>Contact</h2>
+          <ul class="links">
+            <li>
+              <a href="mailto:jamesd5V5@gmail.com">
+                <span>Email</span>
+                <span>jamesd5V5@gmail.com</span>
+              </a>
+              <button type="button" class="copy-btn" data-copy="jamesd5V5@gmail.com" aria-label="Copy email">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.2" y="2.4" width="8" height="9.2" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M3 5.2h7.6v8.4H3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+              </button>
+            </li>
+            <li>
+              <a href="tel:+17472075028">
+                <span>Phone</span>
+                <span>747-207-5028</span>
+              </a>
+              <button type="button" class="copy-btn" data-copy="747-207-5028" aria-label="Copy phone">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.2" y="2.4" width="8" height="9.2" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M3 5.2h7.6v8.4H3z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+              </button>
+            </li>
+          </ul>
+        </section>
     </main>
 
     <footer class="sea" id="sea">
@@ -83,25 +107,45 @@
     </footer>
 
     <div id="work" class="work" hidden aria-hidden="true">
-      <div class="work-bar">
-        <button type="button" class="work-btn" data-work-action="back">Back</button>
-        <p class="work-status" data-work-status>Work</p>
-        <div class="work-bar-right">
-          <label class="work-search">
-            <span>Search</span>
-            <input type="search" data-work-search placeholder="Python, Librosa, DSP" />
-          </label>
-          <fieldset class="work-filters">
-            <label><input type="checkbox" data-work-filter="work" checked /> Work</label>
-            <label><input type="checkbox" data-work-filter="project" checked /> Projects</label>
-          </fieldset>
-          <button type="button" class="work-btn" data-work-action="close">Close</button>
+      <canvas id="work-rim-waves" class="work-rim-waves" aria-hidden="true"></canvas>
+      <div class="work-stage">
+        <div class="work-timeline-block">
+          <div class="work-timeline-head">
+            <p class="work-timeline-kicker">Timeline of my <strong>Work Experience, Personal Projects and Education</strong>. Please use the work type <strong>filters</strong> or <strong>search bar</strong> for specifics, or hover over the timeline for details.</p>
+            <div class="work-timeline-tools">
+              <label class="work-search">
+                <span>Search</span>
+                <input type="search" data-work-search placeholder="Python, Dante, DSP" />
+              </label>
+              <div class="work-timeline-filters">
+                <fieldset class="work-filters">
+                  <span class="work-filters-label">Filters</span>
+                  <label><input type="checkbox" data-work-type="swe" /> Software Engineering</label>
+                  <label><input type="checkbox" data-work-type="ae" /> Audio Engineering/DSP</label>
+                  <label><input type="checkbox" data-work-type="field" /> Field</label>
+                  <button type="button" class="work-filters-clear" data-work-action="clear-filters">Clear filters</button>
+                </fieldset>
+                <button type="button" class="work-timeline-all" data-work-action="all" hidden>All</button>
+              </div>
+            </div>
+          </div>
+          <div class="work-timeline" data-work-timeline></div>
+        </div>
+        <div class="work-list-panel">
+          <div class="work-list" data-work-list></div>
+          <button type="button" class="work-list-scroll-hint work-list-scroll-hint--down" data-work-scroll="down" aria-label="Scroll list down" hidden>
+            <svg class="work-list-scroll-arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button type="button" class="work-list-scroll-hint work-list-scroll-hint--up" data-work-scroll="up" aria-label="Scroll list up" hidden>
+            <svg class="work-list-scroll-arrow work-list-scroll-arrow--up" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
         </div>
       </div>
-      <div class="work-stage">
-        <div class="work-grid" data-work-grid></div>
-        <article class="work-detail" data-work-detail></article>
-      </div>
+      <p class="work-credit"><span>© 2026 James Streett V</span></p>
     </div>
 
     <script src="js/field.js"></script>

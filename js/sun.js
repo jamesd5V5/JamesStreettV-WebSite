@@ -17,7 +17,7 @@
     var wavesEl = document.getElementById("waves");
 
     function size() {
-      var dpi = Math.min(window.devicePixelRatio || 1, 1.75);
+      var dpi = Math.min(window.devicePixelRatio || 1, 1.25);
       var w = Math.max(1, canvas.clientWidth);
       var h = Math.max(1, canvas.clientHeight);
       var pw = Math.max(1, Math.floor(w * dpi));
@@ -29,17 +29,27 @@
       return { w: pw, h: ph, dpi: dpi, cssW: w, cssH: h };
     }
 
+    var layoutCache = null;
+
     function layout(dim) {
+      if (layoutCache && layoutCache.dimW === dim.w && layoutCache.dimH === dim.h) {
+        return layoutCache.sun;
+      }
       var sea = canvas.parentElement.getBoundingClientRect();
       var box = canvas.getBoundingClientRect();
       var scale = dim.h / dim.cssH;
       var horizon = Math.max(8, (sea.top - box.top) * scale);
       var R = Math.min(horizon * 0.98, dim.w * 0.2);
-      return {
-        cx: dim.w * 0.155,
-        horizon: horizon,
-        R: R
+      layoutCache = {
+        dimW: dim.w,
+        dimH: dim.h,
+        sun: {
+          cx: dim.w * 0.155,
+          horizon: horizon,
+          R: R
+        }
       };
+      return layoutCache.sun;
     }
 
     function halfWidth(d, t, R) {
@@ -143,6 +153,7 @@
     size();
     draw(performance.now());
     window.addEventListener("resize", function () {
+      layoutCache = null;
       if (reduced || paused) draw(performance.now());
     });
 
