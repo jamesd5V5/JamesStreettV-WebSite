@@ -8,6 +8,7 @@
       "place": "Remote, CA",
       "dates": "Dec 2025 – Present",
       "stamp": "Dec 2025 – Present",
+      "caption": "SWE 2025–Present",
       "start": "2025-12",
       "end": "present",
       "tone": 0,
@@ -724,9 +725,7 @@
           '" data-work-mark="' +
           job.id +
           '" data-caption="' +
-          job.role +
-          " · " +
-          job.stamp +
+          (job.caption || job.role + " · " + job.stamp) +
           '"' +
           attrs +
           ' style="' +
