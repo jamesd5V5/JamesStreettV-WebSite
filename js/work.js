@@ -5,7 +5,7 @@
       "kind": "work",
       "role": "Software Engineer",
       "org": "CreateBase",
-      "place": "Remote, CA",
+      "place": "Los Angeles, CA",
       "dates": "Dec 2025 – Present",
       "stamp": "Dec 2025 – Present",
       "caption": "SWE 2025–Present",
