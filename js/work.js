@@ -138,7 +138,7 @@
       end: "2025-06",
       mark: "square",
       types: ["swe", "ae"],
-      lede: "Built a real-time <strong>embedded system</strong> that classfies bioacosutic signals into <strong>spectrograms</strong> and <strong>MFCC feature vectors</strong> for dolphin communication classification.",
+      lede: "Built a real-time <strong>embedded system</strong> that classifies bioacoustic signals into <strong>spectrograms</strong> and <strong>MFCC feature vectors</strong> for dolphin communication classification.",
       skills: ["Python", "PyTorch", "DSP", "Bioacoustics engineering", "Embedded Systems", "Machine Learning"],
       body: [
         "Since the 1970s, there has been no major breakthrough in dolphin communication research. Mainly due to the fact that humans hear 20-20kHz, dolphins hear 0-180khz. That's a lot of extra infomation to process, that us humans physically cannot hear. But with the help of machine learning, we have the ability to process this extra infomation and make sense of it.",
