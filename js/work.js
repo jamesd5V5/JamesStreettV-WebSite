@@ -37,9 +37,9 @@
       tone: 1,
       types: ["swe", "ae"],
       lede: "Had the great opputinity to research abroad at Trinity College Dublin over summer of 2025. Where I researched <strong>generative audio</strong> for voice modulation and custom sound design tools, with deep <strong>signal processing</strong> and <strong>feature extraction</strong> to analyze and categorize sound profiles.",
-      skills: ["Python", "Librosa", "ElevenLabs", "Unity", "Unreal Engine", "Sound Design Research", "DSP"],
+      skills: ["Python", "Hugging Face", "LoRA", "LLMs", "Librosa", "ElevenLabs", "Unity", "Unreal Engine", "Godot", "Sound Design Research", "DSP"],
       body: [
-        "Where I collaborated with researchers at Trinity College Dublin on international <strong>R&D</strong> projects. I was able to learn about the latest advancements in generative audio and how to articulate and model to custom sound design tools. Using Python libraries/extensions like Librosa, ElevenLabs... I was able to create custom voice modulation tools designed for software like <strong>Unity</strong>, <strong>Unreal Engine</strong>, and <strong>Godot</strong>.",
+        "Where I collaborated with researchers at Trinity College Dublin on international <strong>R&D</strong> projects. I was able to learn about the latest advancements in generative audio and how to articulate and model to custom sound design tools. Where I <strong>fine-tuned</strong>  open-source audio models and <strong>LLMs</strong> using <strong>Hugging Face</strong> and <strong>LoRA</strong>, building custom piplines for voice modulation and generative audio applications. Built using Python libraries/extensions like <strong>Librosa</strong>, <strong>ElevenLabs</strong>... I was able to create custom voice modulation tools, leveraging DSP technqieues to process complex acoustic data for machine learning tasks. Where I also designed to software to integrate with the tools, such as <strong>Unity</strong>, <strong>Unreal Engine</strong>, and <strong>Godot</strong>.",
       ],
       image: "pics/voicetuneai1.png",
       images: []
@@ -47,7 +47,7 @@
     {
       id: "navy",
       kind: "work",
-      role: "Acoustic Engineer Assistant",
+      role: "Bioacoustic Engineer Assistant",
       org: "San Diego Navy Base",
       place: "San Diego, CA",
       dates: "Dec 2024 – Jun 2025",
@@ -147,6 +147,26 @@
         "Sole recipient of the <strong>Michael L. Sherman ICAM Research Award</strong> across the graduating class."
       ],
       image: "pics/Dolphin1.png",
+      images: []
+    },
+    {
+      id: "ml-music",
+      kind: "project",
+      role: "CNN Music Classification & Song Recommendation System",
+      org: "Research Project",
+      caption: "CNN Music Classifier",
+      dates: "Mar 2025",
+      stamp: "Mar 2025",
+      start: "2025-03",
+      end: "2025-03",
+      mark: "square",
+      types: ["swe", "ae"],
+      lede: "Architected a 3-layer <strong>CNN</strong> in <strong>TensorFlow/Keras</strong> to classify audio into 10 music genres using 60 extracted spectral and <strong>MFCC</strong> features via <strong>Librosa</strong>, achieving <strong>73% test accuracy</strong>.",
+      skills: ["Python", "TensorFlow", "Keras", "Librosa", "Feature Extraction", "Deep Learning", "Cosine Similarity"],
+      body: [
+        "Solved data leakage issues present in benchmark Kaggle pipelines by engineering a strict track-level split, ensuring audio integrity across train/test datasets. Developed a content-based recommendation engine leveraging high-dimensional feature embeddings extracted from the CNN flatten layer and <strong>cosine similarity</strong> metrics.",
+        "Source is on GitHub: <a href=\"https://github.com/jamesd5V5/MlMusicClassifier\" target=\"_blank\" rel=\"noreferrer\">github.com/jamesd5V5/MlMusicClassifier</a>"
+      ],
       images: []
     },
     {
