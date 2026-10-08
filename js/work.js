@@ -13,13 +13,11 @@
       "end": "present",
       "tone": 0,
       "types": ["swe"],
-      "lede": "Engineered scalable music rights matching microservices using <strong>Python</strong>, <strong>OpenSearch</strong>, <strong>AWS ECS</strong>, <strong>Glue</strong>, and many <strong>APIs</strong> to reconcile chaotic DSP, PRO, and MLC metadata against canonical industry datasets.",
-      "skills": ["Python", "AWS", "OpenSearch", "APIs", "ETL Pipelines", "PostgreSQL", "Music Metadata"],
+      "lede": "Engineered scalable music rights matching microservices using <strong>Python</strong>, <strong>OpenSearch</strong>, <strong>AWS</strong>, <strong>Glue</strong>, and many <strong>APIs</strong> to reconcile chaotic DSP, PRO, and messy music metadata against canonical industry datasets.",
+      "skills": ["Python", "AWS", "OpenSearch", "REST APIs", "ECS", "Lambda", "PostgreSQL", "Music Metadata", "Docker", "Git Actions", "CI/CD", "API Design"],
       "body": [
-        "Architected containerized microservices on AWS ECS and automated Glue ETL jobs to ingest, parse, and normalize millions of unstructured records from income statements, publisher contracts, and legacy PRO databases (Songview, BMI, ASCAP...).",
-        "Developed high-throughput entity-resolution pipelines utilizing OpenSearch and <strong>AWS RDS PostgreSQL</strong> to cross-match fuzzy metadata (ISRC, ISWC, IPI, writer/publisher identity groups...) against canonical catalogs like Mechanical Licensing Collective (MLC).",
-        "Built asynchronous processing queues and document-parsing engines to resolve complex contributor identity rules and stream real-time reconciliation reports for rights holders.",
-        "Contributed core technical architecture that helped secure <strong>$15K</strong> in early venture/pre-seed funding by demonstrating automated detection of uncollected mechanical and performance royalties."
+        "Architected containerized microservices on ECS Fargate and automated Glue ETL jobs to ingest, parse, and normalize millions of unstructured records from income statements, publisher contracts, and legacy PRO databases (Songview, BMI, ASCAP...). Creating a scalable and efficient system to reconcile chaotic DSP, PRO, and messy music metadata against canonical industry datasets.",
+        "Developed high-throughput entity-resolution pipelines utilizing OpenSearch and <strong>AWS RDS PostgreSQL</strong> to cross-match fuzzy metadata (ISRC, ISWC, IPI, writer/publisher identity groups...) against canonical catalogs like Mechanical Licensing Collective (MLC). Built asynchronous processing queues and document-parsing engines to resolve complex contributor identity rules and stream real-time reconciliation reports for rights holders."
       ],
       "image": "pics/createbase1.png",
       "images": []
