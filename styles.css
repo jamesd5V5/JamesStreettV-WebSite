@@ -135,11 +135,15 @@ body.work-open .site-header-title {
   gap: 0.28rem;
 }
 
+.nav-resume svg,
 .nav-resume-icon {
   display: block;
   width: 0.78rem;
   height: 0.78rem;
+  max-width: 0.78rem;
+  max-height: 0.78rem;
   flex: 0 0 auto;
+  overflow: visible;
 }
 
 .hero {
