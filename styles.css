@@ -125,7 +125,21 @@ body.work-open .site-header-title {
 
 .nav {
   display: flex;
+  align-items: center;
   gap: 1.4rem;
+}
+
+.nav-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+}
+
+.nav-resume-icon {
+  display: block;
+  width: 0.78rem;
+  height: 0.78rem;
+  flex: 0 0 auto;
 }
 
 .hero {
@@ -1517,6 +1531,19 @@ body.work-open {
 }
 
 @media (max-width: 800px) {
+  .site-header {
+    padding: 0 0.9rem;
+  }
+
+  .nav {
+    gap: 0.72rem;
+  }
+
+  .nav a {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
   .about-footer-row {
     flex-direction: column;
     align-items: flex-start;
